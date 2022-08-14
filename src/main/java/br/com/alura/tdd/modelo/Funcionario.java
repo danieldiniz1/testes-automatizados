@@ -32,6 +32,11 @@ public class Funcionario {
 	}
 
 	public void atualizaSalario(BigDecimal novoSalario) {
-		setSalario(novoSalario.setScale(2));
+		arredondarSalario(novoSalario,2);
+		setSalario(arredondarSalario(novoSalario,2));
+	}
+
+	private BigDecimal arredondarSalario(BigDecimal novoSalario, int i) {
+		return novoSalario.setScale(2);
 	}
 }
